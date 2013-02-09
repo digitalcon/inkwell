@@ -141,7 +141,8 @@ Put in it name of <code>Community</code> table if you want to use it:</p>
 <code>last_shown_obj_id</code> - id of the last item in favorite line shown to the user. Get it from the <code>item_id_in_line</code> property of last item from previous <code>favoriteline</code> calls. This parameter is used for pagination and separation of the timeline.</li>
 </ul><div class="highlight"><pre>    <span class="n">fline</span> <span class="o">=</span> <span class="vi">@user</span><span class="o">.</span><span class="n">favoriteline</span>    <span class="c1">#get first 10 items from @user favorite line</span>
     <span class="n">last_shown_obj_id</span> <span class="o">=</span> <span class="n">fline</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">item_id_in_line</span>
-    <span class="n">fline_next_page</span> <span class="o">=</span> <span class="vi">@user</span><span class="o">.</span><span class="n">favoriteline</span> <span class="ss">:last_shown_obj_id</span> <span class="o">=&gt;</span> <span class="n">last_shown_obj_id</span>    <span class="c1">#get next 10 items from @user favorite line</span>
+    <span class="c1">#get next 10 items from @user favorite line</span>
+    <span class="n">fline_next_page</span> <span class="o">=</span> <span class="vi">@user</span><span class="o">.</span><span class="n">favoriteline</span> <span class="ss">:last_shown_obj_id</span> <span class="o">=&gt;</span> <span class="n">last_shown_obj_id</span>
 </pre></div>
 
 <ul>
