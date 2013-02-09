@@ -139,22 +139,20 @@ Put in it name of <code>Community</code> table if you want to use it:</p>
 <ul>
 <li>
 <code>last_shown_obj_id</code> - id of the last item in favorite line shown to the user. Get it from the <code>item_id_in_line</code> property of last item from previous <code>favoriteline</code> calls. This parameter is used for pagination and separation of the timeline.</li>
-</ul><div class="highlight"><pre>    <span class="n">fline</span> <span class="o">=</span> <span class="vi">@user</span><span class="o">.</span><span class="n">favoriteline</span>    <span class="c1">#get first 10 items from @user favorite line</span>
+<div class="highlight"><pre>    <span class="n">fline</span> <span class="o">=</span> <span class="vi">@user</span><span class="o">.</span><span class="n">favoriteline</span>    <span class="c1">#get first 10 items from @user favorite line</span>
     <span class="n">last_shown_obj_id</span> <span class="o">=</span> <span class="n">fline</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">item_id_in_line</span>
     <span class="c1">#get next 10 items from @user favorite line</span>
     <span class="n">fline_next_page</span> <span class="o">=</span> <span class="vi">@user</span><span class="o">.</span><span class="n">favoriteline</span> <span class="ss">:last_shown_obj_id</span> <span class="o">=&gt;</span> <span class="n">last_shown_obj_id</span>
 </pre></div>
 
-<ul>
 <li>
 <code>limit</code> - defines the count of favorited items to return.</li>
-</ul><div class="highlight"><pre>    <span class="n">fline</span> <span class="o">=</span> <span class="vi">@user</span><span class="o">.</span><span class="n">favoriteline</span> <span class="ss">:limit</span> <span class="o">=&gt;</span> <span class="mi">20</span>    <span class="c1">#return first 20 items from @user favorite line</span>
+<div class="highlight"><pre>    <span class="n">fline</span> <span class="o">=</span> <span class="vi">@user</span><span class="o">.</span><span class="n">favoriteline</span> <span class="ss">:limit</span> <span class="o">=&gt;</span> <span class="mi">20</span>    <span class="c1">#return first 20 items from @user favorite line</span>
 </pre></div>
 
-<ul>
 <li>
 <code>for_user</code> - <code>User</code>, who looks this favorite line. For him <code>is_reblogged</code> and <code>is_favorited</code> properties will been formed. </li>
-</ul><div class="highlight"><pre>    <span class="vi">@user</span><span class="o">.</span><span class="n">favorite</span> <span class="vi">@another_user_post</span>
+<div class="highlight"><pre>    <span class="vi">@user</span><span class="o">.</span><span class="n">favorite</span> <span class="vi">@another_user_post</span>
     <span class="vi">@user</span><span class="o">.</span><span class="n">reblog</span> <span class="vi">@another_user_post</span>
 
     <span class="n">fline_for_unknown_user</span> <span class="o">=</span> <span class="vi">@another_user</span><span class="o">.</span><span class="n">favoriteline</span>
@@ -167,6 +165,7 @@ Put in it name of <code>Community</code> table if you want to use it:</p>
     <span class="n">fline_for_user_who_reblog_and_favorite_another_user_post</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">is_reblogged</span>    <span class="c1"># =&gt; true</span>
     <span class="n">fline_for_user_who_reblog_and_favorite_another_user_post</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">is_favorited</span>    <span class="c1"># =&gt; true</span>
 </pre></div>
+</ul>
 
 <p>More examples you can find in this <a href="https://github.com/salkar/inkwell/blob/master/test/dummy/spec/functional/favorite_spec.rb">spec</a>.</p>
 
