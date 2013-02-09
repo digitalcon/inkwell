@@ -222,7 +222,8 @@ User is able to reblog posts/comments:</p>
 <p>where <code>last_shown_comment_id</code> is id of last shown comment from previous commentline results. For example:</p>
 
 <div class="highlight"><pre>  <span class="n">cline</span> <span class="o">=</span> <span class="vi">@post</span><span class="o">.</span><span class="n">commentline</span>    <span class="c1">#get last 10 comments for @post</span>
-  <span class="n">last_shown_comment_id</span> <span class="o">=</span> <span class="n">cline</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">id</span>    <span class="c1"># First element is taken due to reverse order. In fact, it is the oldest of these comments.</span>
+  <span class="c1"># First element is taken due to reverse order. In fact, it is the oldest of these comments.</span>
+  <span class="n">last_shown_comment_id</span> <span class="o">=</span> <span class="n">cline</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">id</span>    
   <span class="n">cline_next_page</span> <span class="o">=</span> <span class="vi">@post</span><span class="o">.</span><span class="n">commentline</span> <span class="ss">:last_shown_comment_id</span> <span class="o">=&gt;</span> <span class="n">last_shown_comment_id</span>
 </pre></div>
 
