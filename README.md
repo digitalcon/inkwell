@@ -1,4 +1,4 @@
-# Inkwell
+# Inkwell digital consultancy services fork
 
 Inkwell provides a simple way to add social networking features 
 (e.g., comments, reblogs, favorites, following/followers, communities and timelines) to your
