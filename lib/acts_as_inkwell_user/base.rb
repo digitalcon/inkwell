@@ -12,12 +12,12 @@ module Inkwell
       def acts_as_inkwell_user
         has_many :comments, :class_name => 'Inkwell::Comment'
         has_many :following_relations, :class_name => 'Inkwell::Following', :foreign_key => :follower_id
-        has_many :followings, :through => :following_relations, :class_name => ::Inkwell::Engine::config.user_table.to_s.singularize.capitalize
+        has_many :followings, :through => :following_relations, :class_name => ::Inkwell::Engine::config.user.to_s.singularize.capitalize
         has_many :follower_relations, :class_name => 'Inkwell::Following', :foreign_key => :followed_id
-        has_many :followers, :through => :follower_relations, :class_name => ::Inkwell::Engine::config.user_table.to_s.singularize.capitalize
+        has_many :followers, :through => :follower_relations, :class_name => ::Inkwell::Engine::config.user.to_s.singularize.capitalize
         if ::Inkwell::Engine::config.respond_to?('community_table')
           has_many :communities_users, :class_name => 'Inkwell::CommunityUser'
-          has_many :communities, :through => :communities_users, :class_name => ::Inkwell::Engine::config.community_table.to_s.singularize.capitalize, :conditions => {"inkwell_community_users.active" => true}
+          has_many :communities, :through => :communities_users, :class_name => ::Inkwell::Engine::config.community.to_s.singularize.capitalize, :conditions => {"inkwell_community_users.active" => true}
         end
         before_destroy :destroy_processing
         include ::Inkwell::ActsAsInkwellUser::InstanceMethods
